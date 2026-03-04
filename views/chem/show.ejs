@@ -1,0 +1,13 @@
+<%- include('partials/header.ejs')%>
+
+    <h1>Assignment id: <%= resources.id %>
+    </h1>
+    <h2>
+        <%= resources.pdf%> - <%= resources.title%>
+    </h2>
+    <a href="/chem/<%=chem.id%>/edit">Edit Comment</a>
+    <form method="POST" action="/chem/<%=chem.id%>/?_method=DELETE">
+        <button>Delete</button>
+    </form>
+
+    <%- include('partials/footer.ejs')%>
