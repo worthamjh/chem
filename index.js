@@ -147,7 +147,7 @@ const resources = [
 
 
 
-app.get('/chem', (req,res) => {
+app.get('https://worthamjh.github.io/chem/', (req,res) => {
     res.render('chem/index.ejs', {resources})
 })
 
