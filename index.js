@@ -145,22 +145,64 @@ const resources = [
   }
 ];
 
+const resources2 =[
+  { id: uuid(),
+    title: "ASS ASS ASS ASS ASS",
+    pdf: "https://kami.app/X3W-ZEd-FBZ-yqb",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.5-Post%20Unit%20Living%20Systems/1-Unit%20Performance%20Task%20Worksheet%20Image.PNG",
+  }
+];
 
+const resources1Lesson1 =  [
+  { id: uuid(),
+    title: "Exploartion 1-Systems and System Models",
+    pdf: "https://kami.app/AwT-kRs-jVR-sK3",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.1-Life%20in%20the%20Earth%20System/1.1.Ex1-Systems%20and%20System%20Models%20Image.PNG",
+  },
+  { id: uuid(),
+    title: "Lab-Life Under a Microscope Student Handout",
+    pdf: "https://kami.app/VvC-kzj-kzv-Ndd",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.1-Life%20in%20the%20Earth%20System/1.1.L1-Life%20Under%20a%20Microscope%20Image.PNG",
+  },
+  { id: uuid(),
+    title: "Exploration 2-The Earth System",
+    pdf: "https://kami.app/vAN-bvD-MJj-1r7",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.1-Life%20in%20the%20Earth%20System/1.1.Ex2-The%20Earth%20System%20Image.PNG",
+  },
+  { id: uuid(),
+    title: "Lab-The Study of Life Student Handout",
+    pdf: "https://kami.app/38d-UEE-z7a-3d2",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.1-Life%20in%20the%20Earth%20System/1.1.L2-The%20Study%20of%20Life%20Image.PNG",
+  },
+  { id: uuid(),
+    title: "Lab-Modeling a System Student Handout",
+    pdf: "https://kami.app/YAi-4Dp-dtm-c4Z",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.1-Life%20in%20the%20Earth%20System/1.1.L3-Modeling%20a%20System%20Image.PNG",
+  },
+  { id: uuid(),
+    title: "Life in the Earth System Lesson Self Check",
+    pdf: "https://kami.app/Kcu-PuF-dN6-L9e",
+    img: "https://raw.githubusercontent.com/worthamjh/Biology/refs/heads/main/Unit%201-Living%20Systems/1.1-Life%20in%20the%20Earth%20System/1.1.Ev-Lesson%20Self%20Check%20Image.PNG",
+  }
+];
 
 
 app.get('/chem', (req,res) => {
     res.render('chem/index.ejs', {resources})
 })
 
+app.get('/chem/newassignment', (req,res) => {
+  res.render('/chem/newassignment.ejs');
+})
 app.get('/chem/unit0', (req,res) => {
-  res.render('chem/unit0.ejs')
+  res.render('/chem/unit0.ejs')
 })
 
 app.get('/chem/unit1', (req,res) => {
-  res.render('chem/unit1.ejs')
+  res.render('chem/unit1.ejs', {resources})
 })
 app.get('/chem/unit1lesson1', (req,res) => {
-  res.render('chem/unit1lesson1.ejs')
+  res.render('chem/unit1lesson1.ejs', {resources1Lesson1})
 })
 app.get('/chem/unit1lesson2', (req,res) => {
   res.render('chem/unit1lesson2.ejs')
@@ -170,7 +212,7 @@ app.get('/chem/unit1lesson3', (req,res) => {
 })
 
 app.get('/chem/unit2', (req,res) => {
-  res.render('chem/unit2.ejs')
+  res.render('chem/unit2.ejs', {resources2})
 })
 
 app.get('/chem/unit3', (req,res) => {

@@ -3,6 +3,16 @@
     <h1>Unit 1</h1>
     <h2>Lesson 1</h2>
     <h3>Life in the Earth System</h3>
-
+    <ul>
+        <% for(let r of resources1Lesson1){%>
+            <li>
+                <b>
+                    <a href="<%= r.pdf %>">
+                        <%=r.title%>
+                    </a>
+                </b>
+            </li>
+            <% }%>
+    </ul>
 
     <%- include('partials/footer.ejs')%>

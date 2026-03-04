@@ -1,6 +1,16 @@
 <%- include('partials/header.ejs')%>
 
     <h1>Unit 2</h1>
-
+    <ul>
+        <% for(let r of resources2){%>
+            <li>
+                <b>
+                    <a href="<%= r.pdf %>">
+                        <%=r.title%>
+                    </a>
+                </b>
+            </li>
+            <% }%>
+    </ul>
 
     <%- include('partials/footer.ejs')%>

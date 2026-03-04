@@ -1,0 +1,17 @@
+<%- include('partials/header.ejs')%>
+
+    <h1>Create an Assighment</h1>
+
+    <form action="/chem/unit1" method="post">
+        <section>
+            <label for="assignmentTitle">Enter Assignment Title:</label>
+            <input type="text" id="assignmentTitle" placeholder="New Assignment Title" name="assignmentTitle">
+        </section>
+        <section>
+            <label for="assignmentPDF">Comment Text</label>
+            <textarea name="assignmentPDF" id="assignmentPDF" cols="40" rows="5"></textarea>
+        </section>
+        <button>Submit</button>
+    </form>
+
+    <%- include('partials/footer.ejs')%>
