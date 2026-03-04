@@ -4,6 +4,7 @@ const path= require('path');
 const methodOverride = require('method-override')
 const {v4: uuid } = require('uuid');
 
+app.use(express.static(path.join(__dirname, '/public')))
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(methodOverride('_method'))
@@ -147,22 +148,39 @@ const resources = [
 
 
 
-app.get('https://worthamjh.github.io/chem/', (req,res) => {
+app.get('/chem', (req,res) => {
     res.render('chem/index.ejs', {resources})
+})
+
+app.get('/chem/unit0', (req,res) => {
+  res.render('chem/unit0.ejs')
 })
 
 app.get('/chem/unit1', (req,res) => {
   res.render('chem/unit1.ejs')
 })
+app.get('/chem/unit1lesson1', (req,res) => {
+  res.render('chem/unit1lesson1.ejs')
+})
+app.get('/chem/unit1lesson2', (req,res) => {
+  res.render('chem/unit1lesson2.ejs')
+})
+app.get('/chem/unit1lesson3', (req,res) => {
+  res.render('chem/unit1lesson3.ejs')
+})
+
 app.get('/chem/unit2', (req,res) => {
   res.render('chem/unit2.ejs')
 })
+
 app.get('/chem/unit3', (req,res) => {
   res.render('chem/unit3.ejs')
 })
+
 app.get('/chem/unit4', (req,res) => {
   res.render('chem/unit4.ejs')
 })
+
 app.get('/chem/unit5', (req,res) => {
   res.render('chem/unit5.ejs')
 })
