@@ -1,0 +1,9 @@
+<%- include('partials/header.ejs')%>
+    <h1>Edit</h1>
+    <form method="post" action="/chem/<%= assignment.id%>?_method=PATCH">
+        <textarea name="assignment" id="" cols="30" rows="15">
+        <%= assignment.assignment %>
+        </textarea>
+        <button>Save</button>
+    </form>
+    <%- include('partials/footer.ejs')%>

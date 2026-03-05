@@ -287,13 +287,28 @@ app.get('/chem/newassignment', (req,res) => {
 app.post('/chem/unit1', (req,res) => {
     const {title, unit, pdf} = req.body;
     resources.push({title, unit, pdf, id: uuid()})
-    res.redirect('/chem/unit1');
+    res.redirect('chem/unit1.ejs');
 })
+
 
 app.get('/chem/:id', (req,res) => {
   const { id } = req.params;
   const assignment = resources.find(r => r.id === id);
   res.render('chem/show', {assignment})
+})
+
+app.get('/chem/:id/edit', (req,res) => {
+  const { id } = req.params;
+  const assignment = resources.find(r => r.id === id);
+  res.render('chem/edit', {assignment})
+})
+
+app.patch('/chem/:id', (req,res) => {
+  const { id } = req.params;
+  const newAssignmentText=req.body.assignment;
+  const foundAssignment = resources.find(r => r.id === id);
+  foundAssignment.assignent= newAssignmentText;
+  res.redirect('/chem/:id');
 })
 
 app.listen(3000, () => {

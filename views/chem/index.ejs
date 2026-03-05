@@ -1,5 +1,17 @@
 <%- include('partials/header.ejs')%>
-
+    <ul>
+        <% for(let r of resources){%>
+            <li>
+                <b>
+                    <a href="<%= r.pdf %>">
+                        <img src="<%= r.img %>" alt="<%= r.title %>" />
+                        <%= r.unit %>
+                    </a>
+                </b>
+                <a href="/chem/<%= r.id %>">details</a>
+            </li>
+            <% }%>
+    </ul>
 
 
     <%- include('partials/footer.ejs')%>
